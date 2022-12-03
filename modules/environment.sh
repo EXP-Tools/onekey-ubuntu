@@ -1,3 +1,3 @@
 #!/bin/bash
 
-echo "ll"
+echo "alias ll='ls -al'" >> /etc/profile

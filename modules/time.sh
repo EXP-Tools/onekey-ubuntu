@@ -1,5 +1,3 @@
 #!/bin/bash
 
-
-ssh-keygen
-
+echo "ll"
