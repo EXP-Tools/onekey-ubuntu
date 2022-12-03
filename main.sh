@@ -16,7 +16,7 @@ https://cloud.tencent.com/developer/article/1720702
 
 配置 ssh 免密
 
-添加用户 sodu
+
 
 安装常用工具 zip unzip vim curl 等
 安装 python 等
