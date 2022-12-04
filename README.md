@@ -19,10 +19,11 @@
 
 ## 使用
 
-在 ubuntu 上用 root 用户执行以下命令即可: 
+在 ubuntu 上**用 root 用户**执行以下命令即可: 
 
 1. 下载仓库: `git clone https://github.com/lyy289065406/onekey-ubuntu`
-2. 一键装机: `cd onekey-ubuntu && ./onekey.sh`
+2. 切换目录: `cd onekey-ubuntu`
+3. 一键装机: `./onekey.sh`
 
 
 ## 测试
