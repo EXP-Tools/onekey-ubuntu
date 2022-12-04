@@ -29,7 +29,7 @@ locale-gen
 
 
 echo "Set alias ..."
-echo "alias ll='ls -al'" >> /etc/profile
+echo "alias ll='ls -al'" >> /root/bash
 
 
 echo "Done ."

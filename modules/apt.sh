@@ -24,7 +24,7 @@ EOF
 echo "Install base software ..."
 apt-get install -y curl wget vim procps dos2unix screen git tree 
 apt-get install -y lrzsz zip unzip p7zip-full p7zip-rar
-apt-get install -y telnet net-tools netcat 
+apt-get install -y iputils-ping telnet net-tools netcat 
 apt-get install -y logrotate rsyslog 
 
 

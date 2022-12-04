@@ -5,6 +5,9 @@ MODULE="ohmyzsh"
 echo "+++++++++++++++++++++++++++++++"
 echo "SETTING [${MODULE}]"
 
+ROOT_ZSHRC="/root/.zshrc"
+ROOT_OMZSH="/root/.oh-my-zsh"
+
 
 echo "Install zsh ..."
 if [[ ! "$SHELL" = "/bin/zsh" ]]; then
@@ -14,10 +17,19 @@ fi
 
 
 echo "Install oh my zsh ..."
-# sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
-sh -c "$(wget https://gitee.com/mirrors/oh-my-zsh/raw/master/tools/install.sh -O -)"
-sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="agnoster"/g' /root/.zshrc
-sources /root/.zshrc
+if [ ! -f "${ROOT_ZSHRC}" ]; then
+    # 国外源
+#     sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)" <<EOF
+# Y
+# EOF
+    # 国内源
+    sh -c "$(wget https://gitee.com/mirrors/oh-my-zsh/raw/master/tools/install.sh -O -)" <<EOF
+Y
+EOF
+    sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="agnoster"/g' ${ROOT_ZSHRC}
+    echo "alias ll='ls -al'" >> ${ROOT_ZSHRC}
+    sources ${ROOT_ZSHRC}
+fi
 
 
 echo "Add oh my zsh For all users ..."
@@ -25,8 +37,8 @@ for user in `ls /home`
 do
     if [ ! -f "/home/${user}/.zshrc" ]; then
         echo "Set oh my zsh For ${user} ..."
-        cp -r /root/.oh-my-zsh "/home/${user}/"
-        cp /root/.zshrc "/home/${user}/.zshrc"
+        cp -r ${ROOT_OMZSH} "/home/${user}/"
+        cp ${ROOT_ZSHRC} "/home/${user}/.zshrc"
 
         chown -R ${user}:${user} "/home/${user}/.oh-my-zsh"
         chown ${user}:${user} "/home/${user}/.zshrc"

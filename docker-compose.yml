@@ -20,7 +20,8 @@ services:
       vpn:
         ipv4_address: 172.168.10.2
     volumes:
-      - .:/test_script
+      - ./modules:/test_script/modules
+      - ./onekey.sh:/test_script/onekey.sh
     restart: on-failure
 
   

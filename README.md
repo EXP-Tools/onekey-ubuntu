@@ -32,7 +32,7 @@
 
 1. 构建 docker 测试镜像: `bin/build.[sh|ps1]`
 2. 运行 docker 测试容器: `bin/run.[sh|ps1]`
-3. 进入 docker 交互终端: `bin/terminal.[sh|ps1]`
+3. 进入 docker 交互终端: `bin/terminal.[sh|ps1]`（此工程挂载在 `/test_script` 目录下）
 4. 停止 docker 测试容器: `bin/stop.[sh|ps1]`
 
 
