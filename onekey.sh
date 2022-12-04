@@ -8,5 +8,8 @@
 ./modules/env.sh
 ./modules/vm.sh
 ./modules/cron.sh
+./modules/ssh.sh
+./modules/ohmyzsh.sh
+
 
 echo "All Done."
