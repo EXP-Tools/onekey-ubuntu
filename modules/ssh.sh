@@ -1,5 +1,5 @@
 #!/bin/bash
 
 
-ssh-keygen
-
+生成 ssh-keygen
+配置 ssh 免密
