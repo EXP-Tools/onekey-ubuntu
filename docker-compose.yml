@@ -5,11 +5,13 @@
 
 version: '2'
 services:
+
   ubuntu:
-    hostname: SYS_FOR_TEST
     build:
       context: .
       dockerfile: ./Dockerfile
+    container_name: SYS_FOR_TEST
+    hostname: SYS_FOR_TEST
     stdin_open: true
     tty: true
     privileged: true
