@@ -25,10 +25,10 @@ for user in `ls /home`
 do
     if [ ! -f "/home/${user}/.zshrc" ]; then
         echo "Set oh my zsh For ${user} ..."
-        cp -R /root/.oh-my-zsh "/home/${user}/"
+        cp -r /root/.oh-my-zsh "/home/${user}/"
         cp /root/.zshrc "/home/${user}/.zshrc"
 
-        chown ${user}:${user} "/home/${user}/.oh-my-zsh"
+        chown -R ${user}:${user} "/home/${user}/.oh-my-zsh"
         chown ${user}:${user} "/home/${user}/.zshrc"
         chsh -s /bin/zsh ${user}
     fi
