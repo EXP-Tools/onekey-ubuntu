@@ -1,0 +1,32 @@
+# How to use :
+# docker-compose up -d
+# docker-compose down
+# --------------------------------------------------------------------------------
+
+version: '2'
+services:
+  ubuntu:
+    hostname: SYS_FOR_TEST
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    stdin_open: true
+    tty: true
+    privileged: true
+    entrypoint: [ "bash" ]
+    networks: 
+      vpn:
+        ipv4_address: 172.168.10.2
+    volumes:
+      - .:/test_script
+    restart: on-failure
+
+  
+networks:
+  vpn:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet:  172.168.10.0/24
+          gateway: 172.168.10.1
