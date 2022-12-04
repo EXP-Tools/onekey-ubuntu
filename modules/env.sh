@@ -22,14 +22,11 @@ apt-get install -y locales
 echo 'zh_CN.GBK GBK' >> /etc/locale.gen
 echo 'zh_CN.UTF-8 UTF-8' >> /etc/locale.gen
 echo "LANG=zh_CN.UTF-8" >> /etc/environment
-echo "export LANG=zh_CN.UTF-8" >> /etc/profile
-echo "export LANGUAGE=zh_CN.UTF-8" >> /etc/profile
-echo "export LC_ALL=zh_CN.UTF-8" >> /etc/profile
 locale-gen
 
 
 echo "Set alias ..."
-echo "alias ll='ls -al'" >> /root/bash
+echo "alias ll='ls -al'" >> /root/.bashrc
 
 
 echo "Done ."
