@@ -26,7 +26,20 @@ locale-gen
 
 
 echo "Set alias ..."
-echo "alias ll='ls -al'" >> /root/.bashrc
+ALIAS_LL="alias ll='ls -al'"
+
+grep "${ALIAS_LL}" /root/.bashrc
+if [[ ! $? = 0 ]] ; then
+    echo "${ALIAS_LL}" >> /root/.bashrc
+fi
+
+for user in `ls /home` 
+do
+    grep "${ALIAS_LL}" /home/${user}/.bashrc
+    if [[ ! $? = 0 ]] ; then
+        echo "alias ll='ls -al'" >> /home/${user}/.bashrc
+    fi
+done
 
 
 echo "Done ."
