@@ -14,6 +14,7 @@ service cron restart
 
 echo "Enable crontab log ..."
 sed -i "s@#cron@cron@g" /etc/rsyslog.d/50-default.conf
+sed -i "s@/var/log/cron.log@/var/log/cron/cron.log@g" /etc/rsyslog.d/50-default.conf
 service rsyslog restart
 
 
