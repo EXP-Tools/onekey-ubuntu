@@ -10,6 +10,7 @@
 ./modules/cron.sh
 ./modules/ssh.sh
 ./modules/ohmyzsh.sh
+./modules/ftp.sh
 
 
 echo "All Done."
