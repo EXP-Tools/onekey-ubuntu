@@ -4,6 +4,11 @@
 MODULE="ssh"
 echo "+++++++++++++++++++++++++++++++"
 echo "SETTING [${MODULE}]"
+if [[ ! "${UID}" = "0" ]]; then
+    echo "Please switch to root user !!!"
+    exit 1
+fi
+
 
 confpath="/etc/ssh/sshd_config"
 split=" "

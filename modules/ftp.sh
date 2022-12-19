@@ -4,12 +4,16 @@
 MODULE="ftp"
 echo "+++++++++++++++++++++++++++++++"
 echo "SETTING [${MODULE}]"
+if [[ ! "${UID}" = "0" ]]; then
+    echo "Please switch to root user !!!"
+    exit 1
+fi
+
 
 confpath="/etc/vsftpd.conf"
 split="="
 userpath="/etc/vsftpd.userlist"
 touch ${userpath}
-
 
 
 echo "Install FTP ..."

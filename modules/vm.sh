@@ -4,6 +4,11 @@
 MODULE="virtual memory"
 echo "+++++++++++++++++++++++++++++++"
 echo "SETTING [${MODULE}]"
+if [[ ! "${UID}" = "0" ]]; then
+    echo "Please switch to root user !!!"
+    exit 1
+fi
+
 
 VM_SIZE=4096
 VM_DIR="/swap"
