@@ -14,17 +14,17 @@ if [[ "x${split}" = "x" ]]; then
 fi
 
 
-from1="^#${key}${split}.*"
-from2="^${key}${split}.*"
+comment="^#${key}${split}.*"
+from="^${key}${split}.*"
 to="${key}${split}${val}"
 
-grep "${from1}" ${filepath}
+grep "${comment}" ${filepath}
 if [[ $? = 0 ]]; then
-    sed -i "s/${from1}/${to}/g" ${filepath}
+    sed -i "s/${comment}/${to}/g" ${filepath}
 else
-    grep "${from2}" ${filepath}
+    grep "${from}" ${filepath}
     if [[ $? = 0 ]]; then
-        sed -i "s/${from2}/${to}/g" ${filepath}
+        sed -i "s/${from}/${to}/g" ${filepath}
     else
         echo "${to}" >> ${filepath}
     fi
