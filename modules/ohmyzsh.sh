@@ -47,7 +47,9 @@ do
 
         chown -R ${user}:${user} "/home/${user}/.oh-my-zsh"
         chown ${user}:${user} "/home/${user}/.zshrc"
-        chsh -s /bin/zsh ${user}
+        su - ${user}
+        zsh
+        exit
     fi
 done
 
