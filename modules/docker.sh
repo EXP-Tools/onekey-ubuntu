@@ -11,7 +11,7 @@ fi
 
 
 echo "Add docker lib ..."
-apt-get install -y apt-transport-https ca-certificates curl software-properties-common gnupg lsb-release
+apt-get install -y apt-transport-https ca-certificates software-properties-common gnupg lsb-release
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 apt-get update -y
@@ -25,8 +25,9 @@ docker version
 
 
 echo "Install docker-compose ..."
-curl -L "https://github.com/docker/compose/releases/download/v2.6.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-chmod +x /usr/local/bin/docker-compose
+# curl -L "https://github.com/docker/compose/releases/download/v2.6.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+python -m pip install docker-compose
+chmod a+x /usr/local/bin/docker-compose
 docker-compose version
 
 
