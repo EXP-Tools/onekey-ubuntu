@@ -33,7 +33,7 @@ Y
 EOF
     sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="agnoster"/g' ${ROOT_ZSHRC}
     echo "alias ll='ls -alF'" >> ${ROOT_ZSHRC}
-    sources ${ROOT_ZSHRC}
+    source ${ROOT_ZSHRC}
 fi
 
 
