@@ -34,9 +34,10 @@ docker-compose version
 echo "Install users to docker group ..."
 for user in `ls /home` 
 do
-    usermod -aG docker ${user}
+    gpasswd -a ${user} docker
     echo "Add ${user}"
 done
+newgrp docker
 
 echo "Done ."
 echo "-------------------------------"
