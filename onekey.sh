@@ -16,6 +16,7 @@ fi
 ./modules/cron.sh
 ./modules/ssh.sh
 ./modules/ohmyzsh.sh
+./modules/docker.sh
 ./modules/ftp.sh
 
 
