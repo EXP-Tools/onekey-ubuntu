@@ -24,11 +24,11 @@ fi
 echo "Install oh my zsh ..."
 if [ ! -f "${ROOT_ZSHRC}" ]; then
     # 国外源
-#     sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)" <<EOF
+#     sh -c "$(wget --no-check-certificate https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)" <<EOF
 # Y
 # EOF
     # 国内源
-    sh -c "$(wget https://gitee.com/mirrors/oh-my-zsh/raw/master/tools/install.sh -O -)" <<EOF
+    sh -c "$(wget --no-check-certificate https://gitee.com/mirrors/oh-my-zsh/raw/master/tools/install.sh -O -)" <<EOF
 Y
 EOF
     sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="agnoster"/g' ${ROOT_ZSHRC}
