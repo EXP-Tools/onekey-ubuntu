@@ -25,7 +25,7 @@ if [[ $? = 1 ]]; then
 
     # 确保 PATH 在最后一行
     sed -i '/^PATH=/d' ${env_filepath}
-    modules/_set_conf.sh ${env_filepath} "PATH" "\${JAVA_HOME}/bin:${PATH}" ${split}
+    modules/_set_conf.sh ${env_filepath} "PATH" "${PATH}:\${JAVA_HOME}/bin" ${split}
     source ${env_filepath}
 fi
 java -version

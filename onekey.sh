@@ -18,6 +18,7 @@ fi
 ./modules/ohmyzsh.sh
 ./modules/docker.sh
 ./modules/java.sh
+./modules/maven.sh
 ./modules/ftp.sh
 
 
