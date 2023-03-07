@@ -17,6 +17,7 @@ fi
 ./modules/ssh.sh
 ./modules/ohmyzsh.sh
 ./modules/docker.sh
+./modules/java.sh
 ./modules/ftp.sh
 
 

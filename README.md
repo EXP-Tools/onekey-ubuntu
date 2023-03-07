@@ -51,6 +51,7 @@ onekey-ubuntu
 |   |-- docker.sh .............. [docker 安装配置]
 |   |-- ohmyzsh.sh ............. [ohmyzsh 安装配置]
 |   |-- ssh.sh ................. [ssh 免密配置]
+|   |-- java.sh ................ [java 安装配置]
 |   |-- ftp.sh ................. [ftp 安装配置]
 |   `-- cron.sh ................ [crontab 日志配置]
 |-- onekey.sh .................. [一键装机脚本]

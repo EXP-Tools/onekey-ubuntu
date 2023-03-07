@@ -20,11 +20,11 @@ to="${key}${split}${val}"
 
 grep "${comment}" ${filepath}
 if [[ $? = 0 ]]; then
-    sed -i "s/${comment}/${to}/g" ${filepath}
+    sed -i "s!${comment}!${to}!g" ${filepath}
 else
     grep "${from}" ${filepath}
     if [[ $? = 0 ]]; then
-        sed -i "s/${from}/${to}/g" ${filepath}
+        sed -i "s!${from}!${to}!g" ${filepath}
     else
         echo "${to}" >> ${filepath}
     fi
