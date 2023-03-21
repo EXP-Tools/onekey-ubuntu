@@ -27,6 +27,6 @@ if [ "${vm_total}" = "0" ] || [ "${vm_total}" = "0B" ]; then
     echo "${VM_PATH} swap swap defaults 0 0" >> /etc/fstab
 fi
 
-
+free -mh
 echo "Done ."
 echo "-------------------------------"
