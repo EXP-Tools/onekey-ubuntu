@@ -17,8 +17,8 @@ VM_PATH="${VM_DIR}/${VM_FILE}"
 
 
 echo "Set vm (4G) ..."
-vm_total=`free -mh | grep Swap | awk '{print $2}'`
-if [[ "x{$vm_total}" = "x0" ]]; then
+vm_total=$(free -mh | awk '/Swap/{print $2}')
+if [ "${vm_total}" = "0" ] || [ "${vm_total}" = "0B" ]; then
     mkdir -p ${VM_DIR}
     dd if=/dev/zero of=${VM_PATH} bs=1M count=${VM_SIZE}
     chmod 600 ${VM_PATH}
