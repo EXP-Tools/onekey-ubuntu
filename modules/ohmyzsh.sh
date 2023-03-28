@@ -47,10 +47,11 @@ do
 
         chown -R ${user}:${user} "/home/${user}/.oh-my-zsh"
         chown ${user}:${user} "/home/${user}/.zshrc"
+        chsh -s /bin/zsh ${user}
 
-        echo "Please exec \"zsh\" by ${user} itself, in order to switch oh-my-zsh forever !!!"
-        echo "Please exec \"zsh\" by ${user} itself, in order to switch oh-my-zsh forever !!!"
-        echo "Please exec \"zsh\" by ${user} itself, in order to switch oh-my-zsh forever !!!"
+        echo "Please exec \"source ~/.zshrc\" by ${user} itself, in order to switch oh-my-zsh forever !!!"
+        echo "Please exec \"source ~/.zshrc\" by ${user} itself, in order to switch oh-my-zsh forever !!!"
+        echo "Please exec \"source ~/.zshrc\" by ${user} itself, in order to switch oh-my-zsh forever !!!"
     fi
 done
 
