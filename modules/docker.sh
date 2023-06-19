@@ -38,9 +38,6 @@ do
     echo "Add ${user}"
 done
 
-# newgrp 会打开一个新会话导致流程卡住，要使用 exit 退出该会话
-newgrp docker
-exit
 
 echo "Done ."
 echo "-------------------------------"
