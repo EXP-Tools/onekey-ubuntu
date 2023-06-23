@@ -20,6 +20,7 @@ fi
 ./modules/java.sh
 ./modules/maven.sh
 ./modules/ftp.sh
+./modules/bfg.sh
 
 
 echo "All Done."
