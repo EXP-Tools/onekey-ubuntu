@@ -18,7 +18,7 @@ apt-get update -y
 
 
 echo "Install docker ..."
-apt-get install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin
+apt-get install -y docker-ce docker-ce-cli containerd.io
 systemctl enable docker
 systemctl start docker
 docker version
@@ -26,8 +26,9 @@ docker version
 
 echo "Install docker-compose ..."
 # curl -L "https://github.com/docker/compose/releases/download/v2.6.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-python -m pip install docker-compose
-chmod a+x /usr/local/bin/docker-compose
+# python -m pip install docker-compose
+# chmod a+x /usr/local/bin/docker-compose
+apt-get install -y docker-compose-plugin docker-compose
 docker-compose version
 
 
