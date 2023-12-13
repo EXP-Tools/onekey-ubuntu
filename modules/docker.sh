@@ -27,8 +27,8 @@ docker version
 echo "Install docker-compose ..."
 curl -L "https://github.com/docker/compose/releases/download/v2.23.3/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 # python -m pip install docker-compose
-chmod a+x /usr/local/bin/docker-compose
 # apt-get install -y docker-compose
+chmod a+x /usr/local/bin/docker-compose
 docker-compose version
 
 
