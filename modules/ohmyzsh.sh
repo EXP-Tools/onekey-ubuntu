@@ -31,6 +31,11 @@ if [ ! -f "${ROOT_ZSHRC}" ]; then
     sh -c "$(wget --no-check-certificate https://gitee.com/mirrors/oh-my-zsh/raw/master/tools/install.sh -O -)" <<EOF
 Y
 EOF
+    # 如果下载失败则终止脚本
+    if [ $? -ne 0 ]; then
+        echo "Failed to download oh-my-zsh. Exiting..."
+        return 1
+    fi
     sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="agnoster"/g' ${ROOT_ZSHRC}
     echo "alias ll='ls -alF'" >> ${ROOT_ZSHRC}
     source ${ROOT_ZSHRC}
